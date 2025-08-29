@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\ArenaShards.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ArenaShards.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\ArenaShardsEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\ArenaShards">
+      <UniqueIdentifier>{C7D57EEF-A3FB-3879-8CDC-9A9012A08013}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ArenaShards\ArenaShards.Build.cs">
+      <Filter>Source\ArenaShards</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\ArenaShards\ArenaShards.cpp">
+      <Filter>Source\ArenaShards</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\ArenaShards.h">
+      <Filter>Source\ArenaShards</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\ArenaShardsCharacter.cpp">
+      <Filter>Source\ArenaShards</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\ArenaShardsCharacter.h">
+      <Filter>Source\ArenaShards</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\ArenaShardsGameMode.cpp">
+      <Filter>Source\ArenaShards</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\ArenaShardsGameMode.h">
+      <Filter>Source\ArenaShards</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\ArenaShardsPlayerController.cpp">
+      <Filter>Source\ArenaShards</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\ArenaShardsPlayerController.h">
+      <Filter>Source\ArenaShards</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_Combat">
+      <UniqueIdentifier>{0103148B-00B1-3357-9C5B-3D80E62FCE75}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\CombatCharacter.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\CombatCharacter.h">
+      <Filter>Source\ArenaShards\Variant_Combat</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\CombatGameMode.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\CombatGameMode.h">
+      <Filter>Source\ArenaShards\Variant_Combat</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\CombatPlayerController.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\CombatPlayerController.h">
+      <Filter>Source\ArenaShards\Variant_Combat</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_Combat\AI">
+      <UniqueIdentifier>{0A987581-95DC-3F0B-945C-BCF0013686B4}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\AI\CombatAIController.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\AI\CombatAIController.h">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\AI\CombatEnemy.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\AI\CombatEnemy.h">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\AI\CombatEnemySpawner.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\AI\CombatEnemySpawner.h">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\AI\CombatStateTreeUtility.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\AI\CombatStateTreeUtility.h">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\AI\EnvQueryContext_Player.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\AI\EnvQueryContext_Player.h">
+      <Filter>Source\ArenaShards\Variant_Combat\AI</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_Combat\Animation">
+      <UniqueIdentifier>{2D346508-597A-356B-9F85-08721671CC12}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Animation\AnimNotify_CheckChargedAttack.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Animation</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Animation\AnimNotify_CheckChargedAttack.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Animation</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Animation\AnimNotify_CheckCombo.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Animation</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Animation\AnimNotify_CheckCombo.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Animation</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Animation\AnimNotify_DoAttackTrace.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Animation</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Animation\AnimNotify_DoAttackTrace.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Animation</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_Combat\Gameplay">
+      <UniqueIdentifier>{7CEF2002-C25A-3D8E-BF31-74C26D7731E5}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatActivationVolume.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatActivationVolume.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatCheckpointVolume.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatCheckpointVolume.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatDamageableBox.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatDamageableBox.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatDummy.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatDummy.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatLavaFloor.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Gameplay\CombatLavaFloor.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Gameplay</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_Combat\Interfaces">
+      <UniqueIdentifier>{30077BFE-4543-3EA4-90BB-E471FB40EA17}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Interfaces\CombatActivatable.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Interfaces</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Interfaces\CombatActivatable.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Interfaces</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Interfaces\CombatAttacker.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Interfaces</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Interfaces\CombatAttacker.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Interfaces</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\Interfaces\CombatDamageable.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\Interfaces</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\Interfaces\CombatDamageable.h">
+      <Filter>Source\ArenaShards\Variant_Combat\Interfaces</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_Combat\UI">
+      <UniqueIdentifier>{E866EBA0-DDC1-3407-95EB-DE91DE00A12C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Combat\UI\CombatLifeBar.cpp">
+      <Filter>Source\ArenaShards\Variant_Combat\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Combat\UI\CombatLifeBar.h">
+      <Filter>Source\ArenaShards\Variant_Combat\UI</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_Platforming">
+      <UniqueIdentifier>{6BC5E3BF-9093-3EB2-930F-40AA5654BBBC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Platforming\PlatformingCharacter.cpp">
+      <Filter>Source\ArenaShards\Variant_Platforming</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Platforming\PlatformingCharacter.h">
+      <Filter>Source\ArenaShards\Variant_Platforming</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Platforming\PlatformingGameMode.cpp">
+      <Filter>Source\ArenaShards\Variant_Platforming</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Platforming\PlatformingGameMode.h">
+      <Filter>Source\ArenaShards\Variant_Platforming</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Platforming\PlatformingPlayerController.cpp">
+      <Filter>Source\ArenaShards\Variant_Platforming</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Platforming\PlatformingPlayerController.h">
+      <Filter>Source\ArenaShards\Variant_Platforming</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_Platforming\Animation">
+      <UniqueIdentifier>{9F4DD650-3FCD-3AAA-A731-22CDC69190DF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_Platforming\Animation\AnimNotify_EndDash.cpp">
+      <Filter>Source\ArenaShards\Variant_Platforming\Animation</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_Platforming\Animation\AnimNotify_EndDash.h">
+      <Filter>Source\ArenaShards\Variant_Platforming\Animation</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_SideScrolling">
+      <UniqueIdentifier>{D742AABE-6718-3C81-B4E7-13E56B78E090}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\SideScrollingCameraManager.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\SideScrollingCameraManager.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\SideScrollingCharacter.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\SideScrollingCharacter.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\SideScrollingGameMode.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\SideScrollingGameMode.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\SideScrollingPlayerController.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\SideScrollingPlayerController.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_SideScrolling\AI">
+      <UniqueIdentifier>{22C84F6A-2A13-31AB-A54D-3EE60B0C86AE}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\AI\SideScrollingAIController.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\AI\SideScrollingAIController.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\AI\SideScrollingNPC.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\AI\SideScrollingNPC.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\AI\SideScrollingStateTreeUtility.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\AI\SideScrollingStateTreeUtility.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\AI</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_SideScrolling\Gameplay">
+      <UniqueIdentifier>{5C2CAFE2-9E7C-3689-900C-A45BBAFAD613}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\Gameplay\SideScrollingJumpPad.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\Gameplay\SideScrollingJumpPad.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Gameplay</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\Gameplay\SideScrollingMovingPlatform.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\Gameplay\SideScrollingMovingPlatform.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Gameplay</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\Gameplay\SideScrollingPickup.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\Gameplay\SideScrollingPickup.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Gameplay</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\Gameplay\SideScrollingSoftPlatform.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Gameplay</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\Gameplay\SideScrollingSoftPlatform.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Gameplay</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_SideScrolling\Interfaces">
+      <UniqueIdentifier>{F4A34F0D-ECF6-3997-B4C9-7E56CD89B547}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\Interfaces\SideScrollingInteractable.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Interfaces</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\Interfaces\SideScrollingInteractable.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\Interfaces</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaShards\Variant_SideScrolling\UI">
+      <UniqueIdentifier>{850E18D1-4F9A-314F-B029-CA74A7EB6B41}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaShards\Variant_SideScrolling\UI\SideScrollingUI.cpp">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaShards\Variant_SideScrolling\UI\SideScrollingUI.h">
+      <Filter>Source\ArenaShards\Variant_SideScrolling\UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

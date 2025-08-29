@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ArenaShards",
+			"Path": "..\\Source\\ArenaShards.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ArenaShardsEditor",
+			"Path": "..\\Source\\ArenaShardsEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

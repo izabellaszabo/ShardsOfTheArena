@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ArenaShards.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"W:/Work/ShardsOfTheArena/ArenaShards/Intermediate/Build/Win64/x64/ArenaShardsEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
+"W:/Work/ShardsOfTheArena/ArenaShards/Intermediate/Build/Win64/x64/UnrealEditor/Development/ArenaShards/Module.ArenaShards.1.cpp.obj"
+"W:/Work/ShardsOfTheArena/ArenaShards/Intermediate/Build/Win64/x64/UnrealEditor/Development/ArenaShards/Module.ArenaShards.2.cpp.obj"
+"W:/Work/ShardsOfTheArena/ArenaShards/Intermediate/Build/Win64/x64/UnrealEditor/Development/ArenaShards/Default.rc2.res"
+/OUT:"W:/Work/ShardsOfTheArena/ArenaShards/Intermediate/Build/Win64/x64/UnrealEditor/Development/ArenaShards/UnrealEditor-ArenaShards.lib"
