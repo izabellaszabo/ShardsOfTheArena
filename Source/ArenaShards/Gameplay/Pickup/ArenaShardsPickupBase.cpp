@@ -12,7 +12,6 @@ AArenaShardsPickupBase::AArenaShardsPickupBase()
 	Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 	SetRootComponent(Root);
 
-	// create the base plate
 	BaseMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	BaseMesh->SetupAttachment(RootComponent);
 	BaseMesh->SetCollisionProfileName(FName("OverlapAllDynamic"));
@@ -35,15 +34,16 @@ void AArenaShardsPickupBase::Tick(float DeltaTime)
 
 void AArenaShardsPickupBase::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	OnPickup(OtherActor);
-	OnPickedUp(OtherActor);
+	HandlePickup(OtherActor);
+	BP_OnPickedUp(OtherActor);
+	OnPickedUp.Broadcast();
+	
 	// Pool Object
-
 	BaseMesh->SetVisibility(false);
 	BaseMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
-void AArenaShardsPickupBase::OnPickup(AActor* PickedUpBy)
+void AArenaShardsPickupBase::HandlePickup(AActor* PickedUpBy)
 {
 	
 }

@@ -18,6 +18,6 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Shard")
 	int ShardPoints = 1;
 
-	virtual void OnPickup(AActor* PickedUpBy);
+	virtual void HandlePickup(AActor* PickedUpBy);
 
 };

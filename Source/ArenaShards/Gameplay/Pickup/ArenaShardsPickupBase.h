@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "ArenaShardsPickupBase.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPickedUp);
+
 UCLASS()
 class ARENASHARDS_API AArenaShardsPickupBase : public AActor
 {
@@ -16,13 +18,16 @@ public:
 	USceneComponent* Root;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	class UStaticMeshComponent* BaseMesh;
+	UStaticMeshComponent* BaseMesh;
+
+	UPROPERTY(BlueprintAssignable, Category = "Pickup")
+	FOnPickedUp OnPickedUp;
 	
 	AArenaShardsPickupBase();
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnPickedUp(AActor* PickedUpBy);
+	void BP_OnPickedUp(AActor* PickedUpBy);
 
 protected:
 	virtual void BeginPlay() override;
@@ -30,6 +35,6 @@ protected:
 	UFUNCTION()
 	void OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
-	virtual void OnPickup(AActor* PickedUpBy);
+	virtual void HandlePickup(AActor* PickedUpBy);
 
 };

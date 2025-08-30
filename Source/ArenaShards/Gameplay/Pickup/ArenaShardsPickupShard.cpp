@@ -2,7 +2,7 @@
 #include "Gameplay/Pickup/ArenaShardsPickupShard.h"
 #include "ArenaShardsCharacter.h"
 
-void AArenaShardsPickupShard::OnPickup(AActor* PickedUpBy)
+void AArenaShardsPickupShard::HandlePickup(AActor* PickedUpBy)
 {
 	auto player = Cast<AArenaShardsCharacter>(PickedUpBy);
 	player->AddPoints(ShardPoints);
