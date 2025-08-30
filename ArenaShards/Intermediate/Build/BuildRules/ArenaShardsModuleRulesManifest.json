@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"W:\\Work\\ShardsOfTheArena\\ArenaShards\\Source\\ArenaShards\\ArenaShards.Build.cs",
-		"W:\\Work\\ShardsOfTheArena\\ArenaShards\\Source\\ArenaShards.Target.cs",
-		"W:\\Work\\ShardsOfTheArena\\ArenaShards\\Source\\ArenaShardsEditor.Target.cs"
-	],
-	"EngineVersion": "5.6.1"
-}
