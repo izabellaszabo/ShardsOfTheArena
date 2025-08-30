@@ -46,8 +46,8 @@ AArenaShardsCharacter::AArenaShardsCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
 
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
-	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+	// From gaem mode TODO
+	StartMatch();
 }
 
 void AArenaShardsCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -130,4 +130,15 @@ void AArenaShardsCharacter::DoJumpEnd()
 {
 	// signal the character to stop jumping
 	StopJumping();
+}
+
+void AArenaShardsCharacter::StartMatch()
+{
+	PlayerPoints = 0;
+}
+
+void AArenaShardsCharacter::AddPoints(int PointsToAdd)
+{
+	PlayerPoints += PointsToAdd;
+	UE_LOG(LogTemp, Warning, TEXT("New Points: %d"), PlayerPoints)
 }
