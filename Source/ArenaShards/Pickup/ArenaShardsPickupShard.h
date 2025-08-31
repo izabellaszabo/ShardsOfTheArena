@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Gameplay/Pickup/ArenaShardsPickupBase.h"
+#include "ArenaShardsPickupBase.h"
 #include "ArenaShardsPickupShard.generated.h"
 
 /**

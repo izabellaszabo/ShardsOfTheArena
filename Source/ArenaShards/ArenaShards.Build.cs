@@ -25,19 +25,12 @@ public class ArenaShards : ModuleRules
 
 		PublicIncludePaths.AddRange(new string[] {
 			"ArenaShards",
-			"ArenaShards/Variant_Platforming",
-			"ArenaShards/Variant_Platforming/Animation",
 			"ArenaShards/Variant_Combat",
 			"ArenaShards/Variant_Combat/AI",
 			"ArenaShards/Variant_Combat/Animation",
 			"ArenaShards/Variant_Combat/Gameplay",
 			"ArenaShards/Variant_Combat/Interfaces",
-			"ArenaShards/Variant_Combat/UI",
-			"ArenaShards/Variant_SideScrolling",
-			"ArenaShards/Variant_SideScrolling/AI",
-			"ArenaShards/Variant_SideScrolling/Gameplay",
-			"ArenaShards/Variant_SideScrolling/Interfaces",
-			"ArenaShards/Variant_SideScrolling/UI"
+			"ArenaShards/Variant_Combat/UI"
 		});
 
 		// Uncomment if you are using Slate UI

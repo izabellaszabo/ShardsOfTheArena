@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Activatable/ActivatableBase.h"
-#include "Act_ItemSpawner.generated.h"
+#include "ActivatableBase.h"
+#include "ActivatableItemSpawner.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class ARENASHARDS_API AAct_ItemSpawner : public AActivatableBase
+class ARENASHARDS_API AActivatableItemSpawner : public AActivatableBase
 {
 	GENERATED_BODY()
 	
@@ -27,7 +27,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	float RespawnSecInterval = 1;
 
-	AAct_ItemSpawner();
+	AActivatableItemSpawner();
 
 protected:
 	virtual void BeginPlay();

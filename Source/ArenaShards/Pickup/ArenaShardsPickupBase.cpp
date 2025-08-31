@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-#include "Gameplay/Pickup/ArenaShardsPickupBase.h"
+#include "Pickup/ArenaShardsPickupBase.h"
 #include "Components/StaticMeshComponent.h"
+#include "ArenaShardsPoolingSubsystem.h"
 
 // Sets default values
 AArenaShardsPickupBase::AArenaShardsPickupBase()
@@ -35,15 +36,34 @@ void AArenaShardsPickupBase::Tick(float DeltaTime)
 void AArenaShardsPickupBase::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	HandlePickup(OtherActor);
-	BP_OnPickedUp(OtherActor);
-	OnPickedUp.Broadcast();
-	
-	// Pool Object
-	BaseMesh->SetVisibility(false);
-	BaseMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
 void AArenaShardsPickupBase::HandlePickup(AActor* PickedUpBy)
 {
-	
+	BP_OnPickedUp(PickedUpBy);
+	OnPickedUp.Broadcast();
+
+	auto PoolManager = GetWorld()->GetSubsystem<UArenaShardsPoolingSubsystem>();
+	PoolManager->ReturnPooledActor(this);
+}
+
+void AArenaShardsPickupBase::OnTakenFromPool(FTransform PlaceHere)
+{
+	IsInPool = false;
+	BaseMesh->SetVisibility(true);
+	BaseMesh->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	SetActorTransform(PlaceHere);
+}
+
+void AArenaShardsPickupBase::OnReturnedToPool()
+{
+	IsInPool = true;
+	BaseMesh->SetVisibility(false);
+	BaseMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	SetActorTransform(FTransform::Identity);
+}
+
+bool AArenaShardsPickupBase::IsPooled()
+{
+	return IsInPool;
 }
