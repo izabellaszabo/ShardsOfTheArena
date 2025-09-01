@@ -12,6 +12,7 @@
 #include "InputActionValue.h"
 #include "ArenaShards.h"
 #include "ArenaShardsPlayerState.h"
+#include "ArenaShardsGameState.h"
 
 AArenaShardsCharacter::AArenaShardsCharacter()
 {
@@ -46,9 +47,21 @@ AArenaShardsCharacter::AArenaShardsCharacter()
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
+}
 
-	// From gaem mode TODO
-	StartMatch();
+void AArenaShardsCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_None);
+
+	auto gs = Cast<AArenaShardsGameState>(GetWorld()->GetGameState());
+	if(gs)
+	{
+		gs->OnCountdownStarted.AddDynamic(this, &AArenaShardsCharacter::HandleCountdownStarted);
+		gs->OnMatchStart.AddDynamic(this, &AArenaShardsCharacter::HandleMatchStarted);
+		gs->OnMatchEnd.AddDynamic(this, &AArenaShardsCharacter::HandleMatchEnded);
+	}
 }
 
 void AArenaShardsCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -133,9 +146,20 @@ void AArenaShardsCharacter::DoJumpEnd()
 	StopJumping();
 }
 
-void AArenaShardsCharacter::StartMatch()
+void AArenaShardsCharacter::HandleCountdownStarted(float SecondsToStart)
 {
 
+}
+
+void AArenaShardsCharacter::HandleMatchStarted()
+{
+	GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_Walking);
+}
+
+void AArenaShardsCharacter::HandleMatchEnded(APlayerState* WinningPlayer)
+{
+	GetCharacterMovement()->SetMovementMode(EMovementMode::MOVE_None);
+	GetCharacterMovement()->StopMovementImmediately();
 }
 
 void AArenaShardsCharacter::AddPoints(int PointsToAdd)

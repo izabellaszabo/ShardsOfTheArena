@@ -51,7 +51,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	virtual void DoJumpEnd();
 
-	void StartMatch();
 	void AddPoints(int PointsToAdd);
 
 	/** Returns CameraBoom subobject **/
@@ -76,6 +75,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Input")
 	UInputAction* MouseLookAction;
 
+	void BeginPlay() override;
 
 	/** Initialize input action bindings */
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -85,6 +85,13 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	UFUNCTION()
+	void HandleCountdownStarted(float SecondsToStart);
+	UFUNCTION()
+	void HandleMatchStarted();
+	UFUNCTION()
+	void HandleMatchEnded(APlayerState* WinningPlayer);
 
 };
 

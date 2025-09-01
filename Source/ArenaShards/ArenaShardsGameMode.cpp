@@ -4,6 +4,7 @@
 #include "Gameframework/PlayerState.h"
 #include "Gameframework/GameState.h"
 #include "ArenaShardsPlayerState.h"
+#include "ArenaShardsGameState.h"
 
 void AArenaShardsGameMode::BeginPlay()
 {
@@ -26,13 +27,21 @@ void AArenaShardsGameMode::PostLogin(APlayerController* NewPlayer)
 
 void AArenaShardsGameMode::StartCountdown()
 {
-    OnMatchCountdown.Broadcast(GameStartCountdownSec);
+    auto gs = Cast<AArenaShardsGameState>(GameState);
+    if(gs)
+    {
+        gs->GameCountdownStarted(GameStartCountdownSec);
+    }
     GetWorldTimerManager().SetTimer(StartTimerHandle, this, &AArenaShardsGameMode::StartMatch, GameStartCountdownSec, false);
 }
 
 void AArenaShardsGameMode::StartMatch()
 {
-    OnMatchStart.Broadcast();
+    auto gs = Cast<AArenaShardsGameState>(GameState);
+    if (gs)
+    {
+        gs->HandleMatchStart();
+    }
     GetWorldTimerManager().SetTimer(GameEndTimerHandle, this, &AArenaShardsGameMode::EndMatch, MaxGameTimeSec, false);
 }
 
@@ -50,7 +59,7 @@ void AArenaShardsGameMode::CheckWinCondition(AArenaShardsPlayerState* PlayerStat
 
 void AArenaShardsGameMode::EndMatch()
 {
-    AGameStateBase* gs = GameState;
+    auto gs = Cast<AArenaShardsGameState>(GameState);
     if (!gs) return;
 
     APlayerState* WinningPlayer = nullptr;
@@ -65,7 +74,7 @@ void AArenaShardsGameMode::EndMatch()
             {
                 HighestScore = PlayerScore;
                 WinningPlayer = ps;
-                // Improvement: Handle Ties
+                // Improvement: Handle Ties, handle zero points
             }
         }
     }
@@ -73,6 +82,10 @@ void AArenaShardsGameMode::EndMatch()
     if (WinningPlayer)
     {
         UE_LOG(LogTemp, Log, TEXT("Winner: %s with score %d"), *WinningPlayer->GetPlayerName(), HighestScore);
-        OnMatchEnd.Broadcast(WinningPlayer);
+
+        if (gs)
+        {
+            gs->HandleMatchEnd(WinningPlayer);
+        }
     }
 }

@@ -23,5 +23,7 @@ protected:
 	void HandleMatchCountdown(float CountdownTime);
 	UFUNCTION()
 	void HandleMatchStart();
+	UFUNCTION()
+	void HandleMatchEnd(APlayerState* WinningPlayer);
 
 };

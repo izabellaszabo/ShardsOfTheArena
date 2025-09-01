@@ -1,7 +1,7 @@
 // Copyright (c) 2025, Izabella Szabo. All rights reserved.
 
 #include "ArenaShardsGameManager.h"
-#include "ArenaShardsGameMode.h"
+#include "ArenaShardsGameState.h"
 #include "Activatable/ArenaShardsActivatableBase.h"
 
 AArenaShardsGameManager::AArenaShardsGameManager()
@@ -14,10 +14,11 @@ void AArenaShardsGameManager::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (AArenaShardsGameMode* gm = Cast<AArenaShardsGameMode>(GetWorld()->GetAuthGameMode()))
+	if (auto gs = Cast<AArenaShardsGameState>(GetWorld()->GetGameState()))
 	{
-		gm->OnMatchCountdown.AddDynamic(this, &AArenaShardsGameManager::HandleMatchCountdown);
-		gm->OnMatchStart.AddDynamic(this, &AArenaShardsGameManager::HandleMatchStart);
+		gs->OnCountdownStarted.AddDynamic(this, &AArenaShardsGameManager::HandleMatchCountdown);
+		gs->OnMatchStart.AddDynamic(this, &AArenaShardsGameManager::HandleMatchStart);
+		gs->OnMatchEnd.AddDynamic(this, &AArenaShardsGameManager::HandleMatchEnd);
 	}
 }
 
@@ -33,5 +34,14 @@ void AArenaShardsGameManager::HandleMatchStart()
 	for(AArenaShardsActivatableBase* a : ActorsToActivateOnStart)
 	{
 		a->OnActivated();
+	}
+}
+
+void AArenaShardsGameManager::HandleMatchEnd(APlayerState* WinningPlayer)
+{
+	UE_LOG(LogTemp, Log, TEXT("Match ended! Deactivating spawners"));
+	for (AArenaShardsActivatableBase* a : ActorsToActivateOnStart)
+	{
+		a->OnDeactivated();
 	}
 }
