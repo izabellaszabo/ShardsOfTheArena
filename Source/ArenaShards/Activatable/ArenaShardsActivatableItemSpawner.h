@@ -1,16 +1,15 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2025, Izabella Szabo. All rights reserved.
 
 #pragma once
 
-#include "CoreMinimal.h"
-#include "ActivatableBase.h"
-#include "ActivatableItemSpawner.generated.h"
+#include "ArenaShardsActivatableBase.h"
+#include "ArenaShardsActivatableItemSpawner.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class ARENASHARDS_API AActivatableItemSpawner : public AActivatableBase
+class ARENASHARDS_API AArenaShardsActivatableItemSpawner : public AArenaShardsActivatableBase
 {
 	GENERATED_BODY()
 	
@@ -27,12 +26,12 @@ public:
 	UPROPERTY(EditAnywhere)
 	float RespawnSecInterval = 1;
 
-	AActivatableItemSpawner();
+	AArenaShardsActivatableItemSpawner();
 
 protected:
 	virtual void BeginPlay();
-	virtual void OnActivated();
-	virtual void OnDeactivated();
+	virtual void OnActivated() override;
+	virtual void OnDeactivated() override;
 
 private:
 	UPROPERTY() 

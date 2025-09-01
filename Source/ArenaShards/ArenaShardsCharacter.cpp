@@ -11,6 +11,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "ArenaShards.h"
+#include "ArenaShardsPlayerState.h"
 
 AArenaShardsCharacter::AArenaShardsCharacter()
 {
@@ -134,11 +135,14 @@ void AArenaShardsCharacter::DoJumpEnd()
 
 void AArenaShardsCharacter::StartMatch()
 {
-	PlayerPoints = 0;
+
 }
 
 void AArenaShardsCharacter::AddPoints(int PointsToAdd)
 {
-	PlayerPoints += PointsToAdd;
-	UE_LOG(LogTemp, Warning, TEXT("New Points: %d"), PlayerPoints)
+	auto ps = Cast<AArenaShardsPlayerState>(GetPlayerState());
+	if (ps)
+	{
+		ps->AddArenaScore(PointsToAdd);
+	}
 }

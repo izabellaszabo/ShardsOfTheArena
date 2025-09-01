@@ -1,7 +1,7 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2025, Izabella Szabo. All rights reserved.
+
 #pragma once
 
-#include "CoreMinimal.h"
 #include "UObject/Interface.h"
 #include "ArenaShardsPoolableInterface.generated.h"
 

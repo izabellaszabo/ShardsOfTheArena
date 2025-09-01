@@ -86,8 +86,5 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
-private:
-	int PlayerPoints = -1;
-
 };
 

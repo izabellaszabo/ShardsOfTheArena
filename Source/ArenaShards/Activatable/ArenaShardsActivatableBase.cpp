@@ -1,8 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-#include "Activatable/ActivatableBase.h"
+// Copyright (c) 2025, Izabella Szabo. All rights reserved.
+
+#include "Activatable/ArenaShardsActivatableBase.h"
 #include "Components/BillboardComponent.h"
 
-AActivatableBase::AActivatableBase()
+AArenaShardsActivatableBase::AArenaShardsActivatableBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
 	bReplicates = true;
@@ -15,7 +16,7 @@ AActivatableBase::AActivatableBase()
 	Visualization->SetHiddenInGame(true);
 }
 
-void AActivatableBase::BeginPlay()
+void AArenaShardsActivatableBase::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -34,15 +35,15 @@ void AActivatableBase::BeginPlay()
 	}
 }
 
-void AActivatableBase::Tick(float DeltaTime)
+void AArenaShardsActivatableBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-void AActivatableBase::Activate()
+void AArenaShardsActivatableBase::Activate()
 {
-	for(AActivatableBase* a : ActorsToActivate)
+	for(AArenaShardsActivatableBase* a : ActorsToActivate)
 	{
 		if (IsValid(a))
 		{
@@ -52,9 +53,9 @@ void AActivatableBase::Activate()
 	}
 }
 
-void AActivatableBase::Deactivate()
+void AArenaShardsActivatableBase::Deactivate()
 {
-	for (AActivatableBase* a : ActorsToDeactivate)
+	for (AArenaShardsActivatableBase* a : ActorsToDeactivate)
 	{
 		if (IsValid(a))
 		{
@@ -64,13 +65,13 @@ void AActivatableBase::Deactivate()
 	}
 }
 
-void AActivatableBase::OnActivated()
+void AArenaShardsActivatableBase::OnActivated()
 {
 	State = EActivatorState::Activated;
 	BP_OnActivated();
 }
 
-void AActivatableBase::OnDeactivated()
+void AArenaShardsActivatableBase::OnDeactivated()
 {
 	State = EActivatorState::Deactivated;
 	BP_OnDeactivated();

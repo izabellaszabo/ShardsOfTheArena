@@ -1,10 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2025, Izabella Szabo. All rights reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "ActivatableBase.generated.h"
+#include "ArenaShardsActivatableBase.generated.h"
 
 UENUM(BlueprintType)
 enum class EActivatorState : uint8
@@ -15,7 +15,7 @@ enum class EActivatorState : uint8
 };
 
 UCLASS()
-class ARENASHARDS_API AActivatableBase : public AActor
+class ARENASHARDS_API AArenaShardsActivatableBase : public AActor
 {
 	GENERATED_BODY()
 	
@@ -36,18 +36,21 @@ public:
 	bool MultipleDeactivationsAllowed = false;
 
 	UPROPERTY(EditAnywhere, Category = "Activator")
-	TArray<AActivatableBase*> ActorsToActivate;
+	TArray<AArenaShardsActivatableBase*> ActorsToActivate;
 
 	UPROPERTY(EditAnywhere, Category = "Activator")
-	TArray<AActivatableBase*> ActorsToDeactivate;
+	TArray<AArenaShardsActivatableBase*> ActorsToDeactivate;
 
-	AActivatableBase();
+	AArenaShardsActivatableBase();
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
 	void Activate();
 	UFUNCTION(BlueprintCallable)
 	void Deactivate();
+
+	virtual void OnActivated();
+	virtual void OnDeactivated();
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_OnActivated();
@@ -59,8 +62,5 @@ protected:
 	EActivatorState State = EActivatorState::Inactive;
 
 	virtual void BeginPlay() override;
-
-	virtual void OnActivated();
-	virtual void OnDeactivated();
 	
 };

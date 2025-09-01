@@ -1,4 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright (c) 2025, Izabella Szabo. All rights reserved.
+
 #include "Pickup/ArenaShardsPickupBase.h"
 #include "Components/StaticMeshComponent.h"
 #include "ArenaShardsPoolingSubsystem.h"

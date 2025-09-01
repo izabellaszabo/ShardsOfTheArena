@@ -1,9 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-#include "Activatable/ActivatableItemSpawner.h"
+// Copyright (c) 2025, Izabella Szabo. All rights reserved.
+
+#include "Activatable/ArenaShardsActivatableItemSpawner.h"
 #include "../Pickup/ArenaShardsPickupBase.h"
 #include "../ArenaShardsPoolingSubsystem.h"
 
-AActivatableItemSpawner::AActivatableItemSpawner()
+AArenaShardsActivatableItemSpawner::AArenaShardsActivatableItemSpawner()
 {
 	SpawnTransform = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Spawn Transform"));
 	SpawnTransform->SetupAttachment(RootComponent);
@@ -11,19 +12,19 @@ AActivatableItemSpawner::AActivatableItemSpawner()
 	SpawnTransform->SetHiddenInGame(true);
 }
 
-void AActivatableItemSpawner::BeginPlay()
+void AArenaShardsActivatableItemSpawner::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-void AActivatableItemSpawner::OnActivated()
+void AArenaShardsActivatableItemSpawner::OnActivated()
 {
 	Super::OnActivated();
 
 	SpawnItem();
 }
 
-void AActivatableItemSpawner::OnDeactivated()
+void AArenaShardsActivatableItemSpawner::OnDeactivated()
 {
 	Super::OnDeactivated();
 
@@ -31,7 +32,7 @@ void AActivatableItemSpawner::OnDeactivated()
 		RespawnTimerHandle.Invalidate();
 }
 
-void AActivatableItemSpawner::SpawnItem()
+void AArenaShardsActivatableItemSpawner::SpawnItem()
 {
 	FActorSpawnParameters SpawnParams;
 	SpawnParams.Owner = this;
@@ -41,15 +42,17 @@ void AActivatableItemSpawner::SpawnItem()
 	SpawnedActor = PoolManager->GetPooledActor(ActorClassToSpawn, SpawnTransform->GetComponentTransform());
 
 	if(SpawnedActor)
-		SpawnedActor->OnPickedUp.AddDynamic(this, &AActivatableItemSpawner::ItemPickedUp);
+		SpawnedActor->OnPickedUp.AddDynamic(this, &AArenaShardsActivatableItemSpawner::ItemPickedUp);
+	else
+		UE_LOG(LogTemp, Warning, TEXT("Failed To Spawn Item"))
 }
 
-void AActivatableItemSpawner::ItemPickedUp()
+void AArenaShardsActivatableItemSpawner::ItemPickedUp()
 {
 	if (SpawnedActor)
-		SpawnedActor->OnPickedUp.RemoveDynamic(this, &AActivatableItemSpawner::ItemPickedUp); 
+		SpawnedActor->OnPickedUp.RemoveDynamic(this, &AArenaShardsActivatableItemSpawner::ItemPickedUp); 
 	SpawnedActor = nullptr;
 
 	if (ShouldRespawn)
-		GetWorld()->GetTimerManager().SetTimer(RespawnTimerHandle, this, &AActivatableItemSpawner::SpawnItem, RespawnSecInterval, false);
+		GetWorld()->GetTimerManager().SetTimer(RespawnTimerHandle, this, &AArenaShardsActivatableItemSpawner::SpawnItem, RespawnSecInterval, false);
 }
